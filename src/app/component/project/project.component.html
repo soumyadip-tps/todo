@@ -1,0 +1,25 @@
+<!-- <div class="jumbotron"> -->
+<div class="container">
+  <h2 >Add Project</h2>
+  <div class="row">
+    <div class="col-9">
+      <input [(ngModel)]="todovalue" type="text" name="proj-name" id="proj-id" class="form-control" />
+    </div>
+    <div class="col-3">
+      <button (click)="onClick()" type="button" id="proj-btn" class="btn btn-success">Add</button>
+    </div>
+  </div>
+  &nbsp;
+  <div class="row">
+    <div class="col-9">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let p of projList">
+          <a [routerLink]="['/', 'project', p.id]">{{p.title}}</a>
+
+          <span (click)="del(p.id)" class="btn btn-danger float-right" title="delete"><i class="fas fa-trash"></i></span>
+          <span (click)="edi(p.id, p.title)" class="btn btn-primary float-right mr-2" title="edit"><i class="fas fa-pen-square"></i></span></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
